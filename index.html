@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmashZone - Badminton Slot Booking</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background: #f4f6f9;
+      color: #333;
+    }
+    header {
+      background: url('https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf') center/cover no-repeat;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
+    header h1 {
+      font-size: 3rem;
+      background: rgba(0,0,0,0.5);
+      padding: 10px 20px;
+      border-radius: 12px;
+    }
+    .container {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #2c3e50;
+    }
+    .slots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .slot-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .slot-card:hover {
+      transform: translateY(-5px);
+    }
+    .slot-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .slot-content {
+      padding: 1rem;
+      text-align: center;
+    }
+    .slot-content h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      color: #34495e;
+    }
+    .slot-content p {
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .btn {
+      background: #27ae60;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #219150;
+    }
+    .booked {
+      background: #e74c3c !important;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SmashZone Badminton Booking</h1>
+</header>
+
+<div class="container">
+  <h2>Available Slots</h2>
+  <div class="slots">
+
+    <div class="slot-card">
+      <img src="https://images.unsplash.com/photo-1600962815726-457c19370d71" alt="Court Morning">
+      <div class="slot-content">
+        <h3>Morning Slot</h3>
+        <p>7:00 AM - 9:00 AM</p>
+        <button class="btn" onclick="bookSlot(this)">Book Now</button>
+      </div>
+    </div>
+
+    <div class="slot-card">
+      <img src="https://images.unsplash.com/photo-1609332555308-196021d3c9d3" alt="Court Noon">
+      <div class="slot-content">
+        <h3>Noon Slot</h3>
+        <p>12:00 PM - 2:00 PM</p>
+        <button class="btn" onclick="bookSlot(this)">Book Now</button>
+      </div>
+    </div>
+
+    <div class="slot-card">
+      <img src="https://images.unsplash.com/photo-1574643186923-f1f0c2d3a9bb" alt="Court Evening">
+      <div class="slot-content">
+        <h3>Evening Slot</h3>
+        <p>5:00 PM - 7:00 PM</p>
+        <button class="btn" onclick="bookSlot(this)">Book Now</button>
+      </div>
+    </div>
+
+    <div class="slot-card">
+      <img src="https://images.unsplash.com/photo-1613541441198-9f5205b24e95" alt="Court Night">
+      <div class="slot-content">
+        <h3>Night Slot</h3>
+        <p>8:00 PM - 10:00 PM</p>
+        <button class="btn" onclick="bookSlot(this)">Book Now</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function bookSlot(button) {
+    if (button.classList.contains("booked")) {
+      alert("This slot is already booked!");
+    } else {
+      button.classList.add("booked");
+      button.innerText = "Booked";
+      alert("🎉 Slot booked successfully!");
+    }
+  }
+</script>
+
+</body>
+</html>
